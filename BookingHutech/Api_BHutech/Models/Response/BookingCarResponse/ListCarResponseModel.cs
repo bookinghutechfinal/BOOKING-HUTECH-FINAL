@@ -19,7 +19,7 @@ namespace BookingHutech.Api_BHutech.Models.Response
         public int CarStatus { get; set; } 
 
         // danh sách xe trả về.
-        public List<ListCarResponseModel> listCar { get; set; }
+        public List<ListCarResponseModel> listCar { get; set;  }
     }
     
 }

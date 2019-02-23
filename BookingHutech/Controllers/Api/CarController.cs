@@ -29,7 +29,7 @@ namespace BookingHutech.Controllers.Api
             {
                 LogWriter.WriteException(ex);
                 return ApiResponse.Error();
-                throw;
+               
             }
         }
     }

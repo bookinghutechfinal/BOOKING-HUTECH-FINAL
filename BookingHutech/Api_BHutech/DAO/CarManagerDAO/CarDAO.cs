@@ -41,7 +41,7 @@ namespace BookingHutech.Api_BHutech.DAO.CarDAO
                     employeeResponseModel.CarNumber = reader["CarNumber"].ToString();
                     employeeResponseModel.CarTypeID = Int32.Parse(reader["CarTypeID"].ToString()); 
                     employeeResponseModel.CarStatus = Int32.Parse(reader["CarStatus"].ToString()); 
-                    req.Add(employeeResponseModel);
+                    req.Add(employeeResponseModel) ;
                 }
                 con.Close();
                 return req;
