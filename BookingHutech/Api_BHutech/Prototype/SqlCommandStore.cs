@@ -7,8 +7,8 @@ namespace BookingHutech.Api_BHutech.Prototype
 {
     public static class SqlCommandStore
     {
-        // Get list employee  to DB 
-        public const string uspGetListEmployee = "uspGetListEmployee";
+        // Get list car by Car Status. Anh.Tran Create 23/2/2018. 
+        public const string uspGetListCarByCarStatus = "uspGetListCarByCarStatus";
     }
 
 }
