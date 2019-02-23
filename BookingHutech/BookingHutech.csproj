@@ -143,7 +143,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api_BHutech\DAL\CarManagerDAL\CarDAL.cs" />
+    <Compile Include="Api_BHutech\BHutech_Services\CarServices\CarManagerServices.cs" />
+    <Compile Include="Api_BHutech\BHutech_Services\CarServices\CarServices.cs" />
     <Compile Include="Api_BHutech\DAO\DataAccess.cs" />
     <Compile Include="Api_BHutech\DAO\CarManagerDAO\CarDAO.cs" />
     <Compile Include="Api_BHutech\Lib\Enum\Account.cs" />
@@ -153,8 +154,9 @@
     <Compile Include="Api_BHutech\Lib\Utils\BHutechException.cs" />
     <Compile Include="Api_BHutech\Lib\Utils\DataEntity.cs" />
     <Compile Include="Api_BHutech\Models\Car.cs" />
+    <Compile Include="Api_BHutech\Models\Request\BookingCarRequest\ListCarRequestModel.cs" />
     <Compile Include="Api_BHutech\Models\Response\IResponse.cs" />
-    <Compile Include="Api_BHutech\Models\Response\ListEmployeeResponseModel.cs" />
+    <Compile Include="Api_BHutech\Models\Response\BookingCarResponse\ListCarResponseModel.cs" />
     <Compile Include="Api_BHutech\Prototype\SqlCommandStore.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -188,6 +190,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Api\CarController.cs" />
+    <Compile Include="Controllers\Api\CarDAL.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2167,8 +2171,6 @@
     <Content Include="Views\App\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Api_BHutech\Models\Request\" />
-    <Folder Include="Controllers\Api\" />
     <Folder Include="wwwroot\views\common\sidebar\" />
   </ItemGroup>
   <ItemGroup>

@@ -7,10 +7,12 @@ namespace Demo.Api_BHutech.Models.Response
 {
     public class Car
     {
-        public int ID { get; set; }
-        public String FullName  { get; set; }
-        public int Age { get; set; }
-        public String Address { get; set; }
-         
+        public int CarID { get; set; }
+        public String CarName { get; set; }
+        public String CarNumber { get; set; }
+        public int CarTypeID { get; set; }
+        public int CarStatus { get; set; }
+
+       // public List<Car> listCar { get; set; }
     }
 }

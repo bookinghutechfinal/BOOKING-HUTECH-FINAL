@@ -7,28 +7,26 @@ using BookingHutech.Api_BHutech.Lib;
 using BookingHutech.Api_BHutech.Lib.Utils;
 using BookingHutech.Api_BHutech.Models.Response;
 
-namespace BookingHutech.Api_BHutech.DAO.EmployeeManagerDAO
+namespace BookingHutech.Api_BHutech.DAO.CarDAO
 {
     public class EmployeeDAO
     {
         static DataAccess db;
         static SqlConnection con; 
         static SqlCommand cmd;
-        static SqlDataAdapter adap;
-        ListEmployeeResponseModel employeeResponseModel;
-        List<ListEmployeeResponseModel> listEmployeeResponsesModel;
+        static SqlDataAdapter adap; 
 
         /// <summary>
-        /// Anh.Tran: Create 24/1/2019
-        /// Get list employee
+        /// Anh.Tran: Create 23/2/2019 
         /// </summary>
-        /// <param name="stringSql">Procedure</param>
-        /// <returns>list employee</returns>
-        public List<ListEmployeeResponseModel> GetListEmployeeDAO(String stringSql)
+        /// <param name="stringSql">stringSql</param>
+        /// <returns>list ListCarResponseModel</returns>
+
+        public List<ListCarResponseModel> GetListEmployeeDAO(String stringSql)
         {
             db = new DataAccess();
             con = new SqlConnection(db.ConnectionString());
-            listEmployeeResponsesModel = new List<ListEmployeeResponseModel>(); 
+            List<ListCarResponseModel> req = new List<ListCarResponseModel>(); 
             try
             {
                 //  con.open();
@@ -37,22 +35,23 @@ namespace BookingHutech.Api_BHutech.DAO.EmployeeManagerDAO
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    employeeResponseModel = new ListEmployeeResponseModel();
-                    employeeResponseModel.ID = Int32.Parse(reader["ID"].ToString());
-                    employeeResponseModel.FullName = reader["FullName"].ToString();
-                    employeeResponseModel.Age = Int32.Parse(reader["Age"].ToString());
-                    employeeResponseModel.Address = reader["Address"].ToString();
-                    listEmployeeResponsesModel.Add(employeeResponseModel);
+                    ListCarResponseModel employeeResponseModel = new ListCarResponseModel();
+                    employeeResponseModel.CarID = Int32.Parse(reader["CarID"].ToString());
+                    employeeResponseModel.CarName = reader["CarName"].ToString();
+                    employeeResponseModel.CarNumber = reader["CarNumber"].ToString();
+                    employeeResponseModel.CarTypeID = Int32.Parse(reader["CarTypeID"].ToString()); 
+                    employeeResponseModel.CarStatus = Int32.Parse(reader["CarStatus"].ToString()); 
+                    req.Add(employeeResponseModel);
                 }
                 con.Close();
-                return listEmployeeResponsesModel;
+                return req;
             }
             catch (BHutechException ex)
             {
                 LogWriter.WriteException(ex);
                 con.Close();
             }
-            return listEmployeeResponsesModel;
+            return req;
         }
     }
 }
