@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BookingHutech.Api_BHutech.Lib.Enum
 {
-    public class BookingCarType
+    public class BookingType
     {
         /// <summary>
         /// Trang thái xe
@@ -17,6 +17,16 @@ namespace BookingHutech.Api_BHutech.Lib.Enum
             EmptyCar = 2, // xe trống.
             NotEmptyCar = 3, // có người booking
             Maintenance = 4,  // bảo trì, sửa chữa
+        }
+        public enum ApiRequestType
+        {
+            Web = 1, 
+            Mobile = 2, 
+            
+        }
+        public enum ApiHeaderKey
+        {
+            BHAPIWebCall = 1,
         }
     }
 }

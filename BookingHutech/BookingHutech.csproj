@@ -145,10 +145,11 @@
   <ItemGroup>
     <Compile Include="Api_BHutech\BHutech_Services\CarServices\CarManagerServices.cs" />
     <Compile Include="Api_BHutech\BHutech_Services\CarServices\CarServices.cs" />
+    <Compile Include="Api_BHutech\Lib\Utils\Permissions.cs" />
     <Compile Include="Api_BHutech\DAO\DataAccess.cs" />
     <Compile Include="Api_BHutech\DAO\CarManagerDAO\CarDAO.cs" />
     <Compile Include="Api_BHutech\Lib\Enum\Account.cs" />
-    <Compile Include="Api_BHutech\Lib\Enum\BookingCarType.cs" />
+    <Compile Include="Api_BHutech\Lib\Enum\BookingType.cs" />
     <Compile Include="Api_BHutech\Lib\Helper.cs" />
     <Compile Include="Api_BHutech\Lib\LogWriter.cs" />
     <Compile Include="Api_BHutech\Lib\Utils\BHutechException.cs" />
