@@ -4,6 +4,8 @@ using BookingHutech.Api_BHutech.Lib;
 using BookingHutech.Api_BHutech.Models.Response;
 using BookingHutech.Api_BHutech.CarServices.CarServices;
 using Demo.Api_BHutech.Models.Response;
+using System.Net.Http;
+using System.Linq;
 
 namespace BookingHutech.Controllers.Api
 {
@@ -22,8 +24,20 @@ namespace BookingHutech.Controllers.Api
             CarServices carServices = new CarServices();
             try
             {
-                var Response = carServices.GetListCarDAL(request); 
-                return ApiResponse.Success(Response);
+               
+                var re = Request; 
+                var headers = re.Headers; 
+                if (headers.Contains("SourceSystemCall") && headers.GetValues("SourceSystemCall").First() != null) // chổ này kt đúng  = SourceSystemCall 
+                {
+                    //string token = headers.GetValues("SourceSystemCall").First(); // get values
+                    // gọi hàm,  đi tiếp. 
+                    var Response = carServices.GetListCarDAL(request);
+                    return ApiResponse.Success(Response);
+                }
+                else { 
+                    return ApiResponse.Error(001);
+                }
+
             }
             catch (Exception ex)
             {
@@ -31,6 +45,7 @@ namespace BookingHutech.Controllers.Api
                 return ApiResponse.Error();
                
             }
+          
         }
     }
 }
