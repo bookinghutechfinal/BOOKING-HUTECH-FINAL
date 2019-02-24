@@ -20,8 +20,7 @@ namespace BookingHutech.Api_BHutech.DAO.CarDAO
         /// Anh.Tran: Create 23/2/2019 
         /// </summary>
         /// <param name="stringSql">stringSql</param>
-        /// <returns>list ListCarResponseModel</returns>
-
+        /// <returns>list ListCarResponseModel</returns> 
         public List<ListCarResponseModel> GetListEmployeeDAO(String stringSql)
         {
             db = new DataAccess();
