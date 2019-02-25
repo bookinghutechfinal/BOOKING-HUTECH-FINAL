@@ -28,9 +28,7 @@ namespace BookingHutech.Controllers.Api
             CarServices carServices = new CarServices();
             try
             {
-                //var re = Request; 
-               // var headers = Request.Headers;
-               // string token = Request.Headers.GetValues("SourceSystemCall").First(); // get values 
+                 
                 if (Permissions.CheckAPIRequest(Request.Headers.GetValues(ApiHeaderKey.BHAPIWebCall.ToString()).First()) == (int)ApiRequestType.Web)
                 {
                     var Response = carServices.GetListCarDAL(request);
