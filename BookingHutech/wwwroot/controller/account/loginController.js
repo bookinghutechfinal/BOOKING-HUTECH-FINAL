@@ -2,12 +2,13 @@
 mainmodule.controller('LoginController', ['$scope', '$state', '$rootScope', '$modal', '$http', '$cookies', 'toastr', '$dao',  
     function ($scope, $state, $rootScope, $modal, $http, $cookies, toastr, $dao) {
         $scope.UserName = "Trần Nhựt Anh";
-        $scope.goToMain = function () {
-            $state.go('main');
+        $scope.goToHome = function () {
+            debugger
+            $state.go('main.home');
             return;
         };
         $scope.Login = function () {
-            $scope.goToMain();
+            $scope.goToHome();
         }
 
 
