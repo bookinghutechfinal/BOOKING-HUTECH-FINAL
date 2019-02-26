@@ -28,7 +28,8 @@ namespace BookingHutech.Controllers.Api
         {
             CarServices carServices = new CarServices();
             try
-            { 
+            {
+                // kiểm tra quyền, và nguồn gọi. 
                 if (Permissions.CheckAPIRequest(Request.Headers.GetValues(ApiHeaderKey.BHAPIWebCall.ToString()).First()) == (int)ApiRequestType.Web)
                 {
                     try
@@ -45,20 +46,13 @@ namespace BookingHutech.Controllers.Api
                 else  // sai header .
                 {
                     return ApiResponse.ApiNotPermissionCall();
-                } 
-            } 
+                }
+            }
             catch (Exception ex)  // thiếu header. 
             {
                 LogWriter.WriteException(ex);
-                return ApiResponse.ApiNotPermissionCall(); 
-            }
-
-}
-
-
-        // hoan thanh chuc nang login fix bug
-
- 
-
+                return ApiResponse.ApiNotPermissionCall();
+            } 
+        } 
     }
 }

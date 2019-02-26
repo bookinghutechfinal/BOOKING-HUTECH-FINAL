@@ -27,7 +27,6 @@ namespace BookingHutech.Api_BHutech.CarServices.CarServices
             EmployeeDAO employeeDAO = new EmployeeDAO();
             try
             {
-              
                 string uspGetListEmployee = string.Format("{0} {1}", Prototype.SqlCommandStore.uspGetListCarByCarStatus, request.CarStatus) ;
                 return result.listCar = employeeDAO.GetListEmployeeDAO(uspGetListEmployee); 
             }
