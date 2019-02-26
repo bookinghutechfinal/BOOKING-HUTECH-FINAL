@@ -1,5 +1,6 @@
-﻿/// <reference path="../views/script/date.js" />
-/// <reference path="../controller/maincontroller.js" />
+﻿/////// <reference path="../../script/js/jquery.min.js" /> 
+/////// <reference path="../../script/js/custom.min.js" />
+///// <reference path="../controller/maincontroller.js" />
 
 mainmodule.config(function ($stateProvider, $urlRouterProvider, $locationProvider, KeepaliveProvider, IdleProvider) {
     $urlRouterProvider.otherwise(function ($injector, $location) {
