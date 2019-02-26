@@ -16,7 +16,7 @@ namespace BookingHutech.Controllers.Api
     public class CarController : ApiController
     {
 
-       
+
         /// <summary>
         /// Anh.Tran: Create 24/1/2019
         /// GetListEmployeeDAL
@@ -24,31 +24,36 @@ namespace BookingHutech.Controllers.Api
         /// <param name="">ListCarRequestModel</param>
         /// <returns>ApiResponse</returns> 
         [HttpPost]
-        public ApiResponse GetListCar([FromBody] ListCarRequestModel request) {
+        public ApiResponse GetListCar([FromBody] ListCarRequestModel request)
+        {
             CarServices carServices = new CarServices();
             try
-            {
-                 
+            { 
                 if (Permissions.CheckAPIRequest(Request.Headers.GetValues(ApiHeaderKey.BHAPIWebCall.ToString()).First()) == (int)ApiRequestType.Web)
                 {
-                    var Response = carServices.GetListCarDAL(request);
-                    return ApiResponse.Success(Response);
+                    try
+                    {
+                        var Response = carServices.GetListCarDAL(request);
+                        return ApiResponse.Success(Response);
+                    }
+                    catch (Exception ex) // Thực hiện gọi hàm truy vấn ở lớp trên bị lỗi. 
+                    {
+                        LogWriter.WriteException(ex);
+                        return ApiResponse.Error();
+                    }
                 }
-                // sai header .
-                else{ 
+                else  // sai header .
+                {
                     return ApiResponse.ApiNotPermissionCall();
-                }
-  
-            }
-            // thiếu header. 
-            catch (Exception ex)
+                } 
+            } 
+            catch (Exception ex)  // thiếu header. 
             {
                 LogWriter.WriteException(ex);
-                return ApiResponse.ApiNotPermissionCall();
-
+                return ApiResponse.ApiNotPermissionCall(); 
             }
-          
-        }
+
+}
 
 
         // hoan thanh chuc nang login fix bug

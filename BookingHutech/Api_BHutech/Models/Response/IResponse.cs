@@ -95,7 +95,7 @@ namespace BookingHutech.Api_BHutech.Models.Response
         {
             return new ApiResponse()
             {
-                Message = "Bạn không có quyền",
+                Message = "Sai header. Bạn không có quyền gọi api này.",
                 Data = null,
                 ReturnCode = (int)BHutechExceptionType.APINOTPERMISSIONCALL
             };
