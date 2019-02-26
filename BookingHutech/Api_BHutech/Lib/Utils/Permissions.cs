@@ -14,9 +14,9 @@ namespace BookingHutech.Api_BHutech.BHutech_Services
         /// </summary>
         /// <param name="Header"></param>
         /// <returns>1,2,0</returns>
+
         public static int CheckAPIRequest(String Header)
         {
-
             if (Header == ApiRequestType.Web.ToString() && Header != null)
             {
                 return 1; // web
@@ -25,10 +25,11 @@ namespace BookingHutech.Api_BHutech.BHutech_Services
             {
                 return 2; // app
             }
+
             else
             {
                 return 0;
-            }
+            } 
         }
     }
 }

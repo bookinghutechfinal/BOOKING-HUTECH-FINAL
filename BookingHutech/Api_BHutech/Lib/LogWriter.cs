@@ -32,7 +32,10 @@ namespace BookingHutech.Api_BHutech.Lib
         {
             try
             {
-                string strLogPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); 
+                //string strLogPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); 
+                //string strLogPath = Path.GetDirectoryName("E:/BOOKING_HUTECH"); OK
+                string strLogPath = Path.GetDirectoryName("E:/BOOKING_HUTECH/BookingHutechFinal/BookingHutech/Api_BHutech/Lib/Utils/Log/log");
+                // string strLogPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"/Api_BHutech/Lib/Utils/Log/");
                 strLogPath = Path.Combine(strLogPath, "Ex_BHutechLog.txt");
                 CheckAndSplitFile(strLogPath, FILESIZE);
                 DoWriteException(strLogPath, ex);
@@ -52,7 +55,7 @@ namespace BookingHutech.Api_BHutech.Lib
             try
             {
                 string strLogPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                strLogPath = Path.Combine(strLogPath, "Ex_BHutechLog.txt");  
+                strLogPath = Path.Combine(strLogPath, "Ex_BHutechLog.txt");
                 CheckAndSplitFile(strLogPath, FILESIZE);
                 DoWriteException(strLogPath, str);
 
@@ -90,7 +93,7 @@ namespace BookingHutech.Api_BHutech.Lib
         {
             try
             {
-                string strLogPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); 
+                string strLogPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 CheckAndSplitFile(strLogPath, FileSize);
                 DoWriteException(strLogPath, ex);
             }

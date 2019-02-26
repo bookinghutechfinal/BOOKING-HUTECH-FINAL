@@ -20,9 +20,9 @@ namespace BookingHutech.Api_BHutech.Lib.Enum
         }
         public enum ApiRequestType
         {
+ 
             Web = 1,
-            Mobile = 2,
-
+            Mobile = 2, 
         }
         public enum ApiHeaderKey
         {

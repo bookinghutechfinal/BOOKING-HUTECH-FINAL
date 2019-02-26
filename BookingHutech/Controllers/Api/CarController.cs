@@ -51,9 +51,10 @@ namespace BookingHutech.Controllers.Api
             catch (Exception ex)  // thiếu header. 
             {
                 LogWriter.WriteException(ex);
-                return ApiResponse.ApiNotPermissionCall();
+                return ApiResponse.ApiNotPermissionCall(); 
             }
 
         }
+ 
     }
 }

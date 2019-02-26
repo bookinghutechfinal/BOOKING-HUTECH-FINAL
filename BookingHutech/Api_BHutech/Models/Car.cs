@@ -12,7 +12,6 @@ namespace Demo.Api_BHutech.Models.Response
         public String CarNumber { get; set; }
         public int CarTypeID { get; set; }
         public int CarStatus { get; set; }
-
-       // public List<Car> listCar { get; set; }
+ 
     }
 }

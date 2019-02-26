@@ -6,7 +6,7 @@ using System.Web;
 using BookingHutech.Api_BHutech.Lib;
 using BookingHutech.Api_BHutech.Lib.Utils;
 using BookingHutech.Api_BHutech.Models.Response;
-
+ 
 namespace BookingHutech.Api_BHutech.DAO.CarDAO
 {
     public class EmployeeDAO
@@ -27,8 +27,7 @@ namespace BookingHutech.Api_BHutech.DAO.CarDAO
             con = new SqlConnection(db.ConnectionString());
             List<ListCarResponseModel> request = new List<ListCarResponseModel>(); 
             try
-            {
-                //  con.open();
+            { 
                 con.Open();
                 cmd = new SqlCommand(stringSql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -41,16 +40,16 @@ namespace BookingHutech.Api_BHutech.DAO.CarDAO
                     listCarResponseModel.CarTypeID = Int32.Parse(reader["CarTypeID"].ToString());
                     listCarResponseModel.CarStatus = Int32.Parse(reader["CarStatus"].ToString());
                     request.Add(listCarResponseModel) ;
-                }
-                con.Close();
-                return request;
+                } 
+                con.Close(); 
             }
             catch (BHutechException ex)
             {
-                LogWriter.WriteException(ex);
-                con.Close();
+                LogWriter.WriteException(ex); 
+                con.Close(); 
             }
-            return req;
+            return request;
         }
     }
 }
+ 

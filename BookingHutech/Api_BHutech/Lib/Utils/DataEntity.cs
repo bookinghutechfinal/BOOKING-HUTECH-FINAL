@@ -42,11 +42,19 @@ namespace BookingHutech.Api_BHutech.Lib.Utils
         }
 
         // Check null .
-        public  bool checkDataNull(string request) {
+        public static bool  checkDataNull(string request) {
             if (request == null || request == "") {
                 return true; 
             }
             return false; 
+        }
+        public static bool checkData(int request)
+        {
+            if (request == 0)
+            {
+                return true;
+            }
+            return false;
         }
         public  bool checkDatetime(DateTime request) {
             if (request == null ) {
