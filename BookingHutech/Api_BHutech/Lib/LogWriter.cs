@@ -32,7 +32,9 @@ namespace BookingHutech.Api_BHutech.Lib
         {
             try
             {
-                string strLogPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); 
+                //string strLogPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); 
+                //string strLogPath = Path.GetDirectoryName("E:/BOOKING_HUTECH"); OK
+                string strLogPath = Path.GetDirectoryName("E:/BOOKING_HUTECH/BookingHutechFinal/BookingHutech/Api_BHutech/Lib/Utils/Log/log");
                 strLogPath = Path.Combine(strLogPath, "Ex_BHutechLog.txt");
                 CheckAndSplitFile(strLogPath, FILESIZE);
                 DoWriteException(strLogPath, ex);

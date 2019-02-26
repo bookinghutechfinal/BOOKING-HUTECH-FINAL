@@ -2171,6 +2171,7 @@
     <Content Include="Views\App\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Api_BHutech\Lib\Utils\Log\" />
     <Folder Include="wwwroot\views\common\sidebar\" />
   </ItemGroup>
   <ItemGroup>
