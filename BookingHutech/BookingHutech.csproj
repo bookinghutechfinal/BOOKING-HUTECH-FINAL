@@ -2173,7 +2173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Api_BHutech\Lib\Utils\Log\" />
-    <Folder Include="wwwroot\views\common\sidebar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
