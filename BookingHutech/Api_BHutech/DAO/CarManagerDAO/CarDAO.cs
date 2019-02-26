@@ -25,32 +25,30 @@ namespace BookingHutech.Api_BHutech.DAO.CarDAO
         {
             db = new DataAccess();
             con = new SqlConnection(db.ConnectionString());
-            List<ListCarResponseModel> req = new List<ListCarResponseModel>(); 
+            List<ListCarResponseModel> request = new List<ListCarResponseModel>(); 
             try
-            {
-                //  con.open();
+            { 
                 con.Open();
                 cmd = new SqlCommand(stringSql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    ListCarResponseModel employeeResponseModel = new ListCarResponseModel();
-                    employeeResponseModel.CarID = Int32.Parse(reader["CarID"].ToString());
-                    employeeResponseModel.CarName = reader["CarName"].ToString();
-                    employeeResponseModel.CarNumber = reader["CarNumber"].ToString();
-                    employeeResponseModel.CarTypeID = Int32.Parse(reader["CarTypeID"].ToString()); 
-                    employeeResponseModel.CarStatus = Int32.Parse(reader["CarStatus"].ToString()); 
-                    req.Add(employeeResponseModel) ;
+                    ListCarResponseModel listCarResponseModel = new ListCarResponseModel();
+                    listCarResponseModel.CarID = Int32.Parse(reader["CarID"].ToString());
+                    listCarResponseModel.CarName = reader["CarName"].ToString();
+                    listCarResponseModel.CarNumber = reader["CarNumber"].ToString();
+                    listCarResponseModel.CarTypeID = Int32.Parse(reader["CarTypeID"].ToString());
+                    listCarResponseModel.CarStatus = Int32.Parse(reader["CarStatus"].ToString());
+                    request.Add(listCarResponseModel) ;
                 }
-                con.Close();
-                return req;
+                con.Close(); 
             }
             catch (BHutechException ex)
             {
-                LogWriter.WriteException(ex);
-                con.Close();
+                LogWriter.WriteException(ex); 
+                con.Close(); 
             }
-            return req;
+            return request;
         }
     }
 }
