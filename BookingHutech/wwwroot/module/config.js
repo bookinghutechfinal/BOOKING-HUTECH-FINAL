@@ -18,6 +18,11 @@ mainmodule.config(function ($stateProvider, $urlRouterProvider, $locationProvide
             url: '/dang-nhap',
             templateUrl: '/wwwroot/views/pages/account/login.html',
             controller: 'LoginController', 
+        })
+        .state('changePassword', {
+            url: '/doi-mat-khau',
+            templateUrl: '/wwwroot/views/pages/account/changePassword.html',
+            controller: 'ChangePassword', 
         }) 
         .state('main', {
             url: '/main',
