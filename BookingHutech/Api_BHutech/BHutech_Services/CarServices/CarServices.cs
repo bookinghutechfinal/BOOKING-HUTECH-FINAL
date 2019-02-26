@@ -28,15 +28,15 @@ namespace BookingHutech.Api_BHutech.CarServices.CarServices
             try
             {
               
-                string uspGetListEmployee = string.Format("{0} {1}", Prototype.SqlCommandStore.uspGetListCarByCarStatus, request.CarStatus) ;
-                return result.listCar = employeeDAO.GetListEmployeeDAO(uspGetListEmployee);
-                //return result; 
+                string uspGetListCar = string.Format("{0} {1}", Prototype.SqlCommandStore.uspGetListCarByCarStatus, request.CarStatus) ;
+                return result.listCar = employeeDAO.GetListEmployeeDAO(uspGetListCar); 
             }
             catch (BHutechException ex)
             {
-                LogWriter.WriteException(ex); 
+                LogWriter.WriteException(ex);
+                return result.listCar = null;
             }
-             return result.listCar = null; 
+           
         }
     }
 }

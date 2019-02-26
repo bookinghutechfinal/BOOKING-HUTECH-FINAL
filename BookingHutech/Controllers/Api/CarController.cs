@@ -6,6 +6,10 @@ using BookingHutech.Api_BHutech.CarServices.CarServices;
 using Demo.Api_BHutech.Models.Response;
 using System.Net.Http;
 using System.Linq;
+using BookingHutech.Api_BHutech.BHutech_Services;
+using static BookingHutech.Api_BHutech.Lib.Enum.BookingType;
+
+
 
 namespace BookingHutech.Controllers.Api
 {
@@ -20,32 +24,36 @@ namespace BookingHutech.Controllers.Api
         /// <param name="">ListCarRequestModel</param>
         /// <returns>ApiResponse</returns> 
         [HttpPost]
-        public ApiResponse GetListCar([FromBody] ListCarRequestModel request) {
+        public ApiResponse GetListCar([FromBody] ListCarRequestModel request)
+        {
             CarServices carServices = new CarServices();
             try
             {
-               
-                var re = Request; 
-                var headers = re.Headers; 
-                if (headers.Contains("SourceSystemCall") && headers.GetValues("SourceSystemCall").First() != null) // chổ này kt đúng  = SourceSystemCall 
+                // kiểm tra quyền, và nguồn gọi. 
+                if (Permissions.CheckAPIRequest(Request.Headers.GetValues(ApiHeaderKey.BHAPIWebCall.ToString()).First()) == (int)ApiRequestType.Web)
                 {
-                    //string token = headers.GetValues("SourceSystemCall").First(); // get values
-                    // gọi hàm,  đi tiếp. 
-                    var Response = carServices.GetListCarDAL(request);
-                    return ApiResponse.Success(Response);
+                    try
+                    {
+                        var Response = carServices.GetListCarDAL(request);
+                        return ApiResponse.Success(Response);
+                    }
+                    catch (Exception ex) // Thực hiện gọi hàm truy vấn ở lớp trên bị lỗi. 
+                    {
+                        LogWriter.WriteException(ex);
+                        return ApiResponse.Error();
+                    }
                 }
-                else { 
-                    return ApiResponse.Error(001);
+                else  // sai header .
+                {
+                    return ApiResponse.ApiNotPermissionCall();
                 }
-
             }
-            catch (Exception ex)
+            catch (Exception ex)  // thiếu header. 
             {
                 LogWriter.WriteException(ex);
-                return ApiResponse.Error();
-               
+                return ApiResponse.ApiNotPermissionCall();
             }
-          
+
         }
     }
 }
