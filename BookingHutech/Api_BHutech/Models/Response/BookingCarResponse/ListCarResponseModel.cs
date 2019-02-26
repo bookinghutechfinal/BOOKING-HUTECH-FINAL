@@ -10,13 +10,13 @@ namespace BookingHutech.Api_BHutech.Models.Response
     /// anh.tran 
     /// Create 23/2/2019
     /// </summary>
-    public class ListCarResponseModel 
+    public class ListCarResponseModel : Car
     {
-        public int CarID { get; set; }
-        public String CarName { get; set; }
-        public String CarNumber { get; set; }
-        public int CarTypeID { get; set; }
-        public int CarStatus { get; set; } 
+        //public int CarID { get; set; }
+        //public String CarName { get; set; }
+        //public String CarNumber { get; set; }
+        //public int CarTypeID { get; set; }
+        //public int CarStatus { get; set; } 
 
         // danh sách xe trả về.
         public List<ListCarResponseModel> listCar { get; set;  }

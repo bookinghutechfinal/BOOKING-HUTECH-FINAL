@@ -16,7 +16,7 @@ namespace BookingHutech.Api_BHutech.CarServices.CarServices
 
         /// <summary>
         /// Anh.Tran: Create 24/1/2019 
-        /// GetListEmployeeDAL
+        /// GetListCarDAL
         /// </summary>
         /// <param name="">ListCarRequestModel</param>
         /// <returns>ListCarResponseModel</returns> 

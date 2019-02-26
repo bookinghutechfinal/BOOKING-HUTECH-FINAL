@@ -34,29 +34,18 @@ namespace BookingHutech.Controllers.Api
                     var Response = carServices.GetListCarDAL(request);
                     return ApiResponse.Success(Response);
                 }
-                else {
-                    return ApiResponse.Error(001);
+                // sai header .
+                else{ 
+                    return ApiResponse.ApiNotPermissionCall();
                 }
-
-                //var re = Request; 
-                //var headers = re.Headers; 
-                //if (headers.Contains("SourceSystemCall") && headers.GetValues("SourceSystemCall").First() != null) // chổ này kt đúng  = SourceSystemCall 
-                //{
-                //    //string token = headers.GetValues("SourceSystemCall").First(); // get values
-                //    // gọi hàm,  đi tiếp. 
-                //    var Response = carServices.GetListCarDAL(request);
-                //    return ApiResponse.Success(Response);
-                //}
-                //else { 
-                //    return ApiResponse.Error(001);
-                //}
-
+  
             }
+            // thiếu header. 
             catch (Exception ex)
             {
                 LogWriter.WriteException(ex);
-                return ApiResponse.Error(001);
-               
+                return ApiResponse.ApiNotPermissionCall();
+
             }
           
         }
@@ -65,5 +54,6 @@ namespace BookingHutech.Controllers.Api
         // hoan thanh chuc nang login fix bug
 
  
+
     }
 }

@@ -90,6 +90,15 @@ namespace BookingHutech.Api_BHutech.Models.Response
                 Data = null,
                 ReturnCode = (int)BHutechExceptionType.NOTPERMISSION
             };
+        } 
+        public static ApiResponse ApiNotPermissionCall()
+        {
+            return new ApiResponse()
+            {
+                Message = "Bạn không có quyền",
+                Data = null,
+                ReturnCode = (int)BHutechExceptionType.APINOTPERMISSIONCALL
+            };
         }
 
         public static ApiResponse LostSession(object Data = null)
