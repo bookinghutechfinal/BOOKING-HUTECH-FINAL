@@ -145,6 +145,7 @@
   <ItemGroup>
     <Compile Include="Api_BHutech\BHutech_Services\CarServices\CarManagerServices.cs" />
     <Compile Include="Api_BHutech\BHutech_Services\CarServices\CarServices.cs" />
+    <Compile Include="Api_BHutech\Lib\Utils\Permissions.cs" />
     <Compile Include="Api_BHutech\DAO\DataAccess.cs" />
     <Compile Include="Api_BHutech\DAO\CarManagerDAO\CarDAO.cs" />
     <Compile Include="Api_BHutech\Lib\Enum\Account.cs" />
@@ -153,7 +154,6 @@
     <Compile Include="Api_BHutech\Lib\LogWriter.cs" />
     <Compile Include="Api_BHutech\Lib\Utils\BHutechException.cs" />
     <Compile Include="Api_BHutech\Lib\Utils\DataEntity.cs" />
-    <Compile Include="Api_BHutech\Lib\Utils\Permissions.cs" />
     <Compile Include="Api_BHutech\Models\Car.cs" />
     <Compile Include="Api_BHutech\Models\Request\BookingCarRequest\ListCarRequestModel.cs" />
     <Compile Include="Api_BHutech\Models\Response\IResponse.cs" />
@@ -721,7 +721,6 @@
     <Content Include="Scripts\jquery\src\var\toString.js" />
     <Content Include="Scripts\jquery\src\wrap.js" />
     <Content Include="Scripts\jvectormap\jquery-jvectormap.css" />
-    <Content Include="wwwroot\controller\account\changePasswordController.js" />
     <Content Include="wwwroot\controller\account\loginController.js" />
     <Content Include="wwwroot\controller\app\appController.js" />
     <Content Include="wwwroot\controller\home\homeController.js" />
@@ -1177,7 +1176,6 @@
     <Content Include="script\js\nprogress.js" />
     <Content Include="script\js\skycons.js" />
     <Content Include="script\css\translateelement.css" />
-    <Content Include="wwwroot\views\pages\account\changePassword.html" />
     <Content Include="wwwroot\views\pages\account\login.html" />
     <Content Include="wwwroot\views\pages\home\home.html" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />

@@ -17,26 +17,81 @@ mainmodule.config(function ($stateProvider, $urlRouterProvider, $locationProvide
         .state('login', {
             url: '/dang-nhap',
             templateUrl: '/wwwroot/views/pages/account/login.html',
-            controller: 'LoginController', 
+            controller: 'LoginController',
+            //resolve: {
+            //    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            //        return $ocLazyLoad.load([
+            //            {
+            //                files: [
+            //                    "Content/login.css",
+            //                ]
+            //            }, {
+            //                serie: true,
+            //                files: [
+            //                    //"wwwroot/views/script/date.js",
+            //                ]
+            //            }]).then(function () {
+            //                return $ocLazyLoad.load('wwwroot/controller/pages/account/loginController.js');
+            //            });
+            //    }],
+            //},
+
         })
-        .state('changePassword', {
-            url: '/doi-mat-khau',
-            templateUrl: '/wwwroot/views/pages/account/changePassword.html',
-            controller: 'ChangePassword', 
-        }) 
+
+
+
         .state('main', {
             url: '/main',
             templateUrl: '/wwwroot/views/main.html',
             controller: 'mainController',
+
         })
-        .state('main.home', {
-            url: '/trang-chu',
-            templateUrl: '/wwwroot/views/pages/home/home.html',
-            controller: 'HomeController',
-        })  
+         .state('main.home', {
+             url: '/trang-chu',
+             templateUrl: '/wwwroot/views/pages/home/home.html',
+             controller: 'HomeController',
+         })
+
+        //< script async = "" src = "~/script/js/analytics.js" ></script >
+        //    <script src="~/script/js/jquery.min.js"></script>
+        //    <script src="~/script/js/bootstrap.min.js"></script>
+        //    <script src="~/script/js/fastclick.js"></script>
+        //    <script src="~/script/js/nprogress.js"></script>
+        //    <script src="~/script/js/Chart.min.js"></script>
+        //    <script src="~/script/js/gauge.min.js"></script>
+        //    <script src="~/script/js/bootstrap-progressbar.min.js"></script>
+        //    <script src="~/script/js/icheck.min.js"></script>
+        //    <script src="~/script/js/skycons.js"></script>
+        //    <script src="~/script/js/jquery.flot.js"></script>
+        //    <script src="~/script/js/jquery.flot.pie.js"></script>
+        //    <script src="~/script/js/jquery.flot.time.js"></script>
+        //    <script src="~/script/js/jquery.flot.stack.js"></script>
+        //    <script src="~/script/js/jquery.flot.resize.js"></script>
+        //    <script src="~/script/js/jquery.flot.orderBars.js"></script>
+        //    <script src="~/script/js/jquery.flot.spline.min.js"></script>
+        //    <script src="~/script/js/curvedLines.js"></script>
+        //< script src = "~/script/js/jquery.vmap.js" ></script >
+        //    <script src="~/script/js/jquery.vmap.world.js"></script>
+        //    <script src="~/script/js/jquery.vmap.sampledata.js"></script>
+        //    <script src="~/script/js/moment.min.js"></script>
+        //    <script src="~/script/js/daterangepicker.js"></script>
+
+        //.state('home', {
+        //    url: '/trang-chu',
+        //    templateUrl: '/wwwroot/views/pages/home/home.html',
+        //    controller: 'HomeController',
+        //})
+
+
+        //.state('main.dashboard', {
+        //    url: '/Trang-chu',
+        //    templateUrl: '/wwwroot/views/pages/home/dashboard.html',
+        //    controller: 'dashboardController',
+        //})
+
         .state('error404', {
             url: '/error404',
-            templateUrl: '/wwwroot/views/common/error/error404.html',
+            templateUrl: '/wwwroot/views/common/error404.html',
             //controller: '404controller',
         });
 
