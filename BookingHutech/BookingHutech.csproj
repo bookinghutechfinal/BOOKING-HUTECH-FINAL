@@ -154,7 +154,6 @@
     <Compile Include="Api_BHutech\Lib\LogWriter.cs" />
     <Compile Include="Api_BHutech\Lib\Utils\BHutechException.cs" />
     <Compile Include="Api_BHutech\Lib\Utils\DataEntity.cs" />
-    <Compile Include="Api_BHutech\Lib\Utils\Permissions.cs" />
     <Compile Include="Api_BHutech\Models\Car.cs" />
     <Compile Include="Api_BHutech\Models\Request\BookingCarRequest\ListCarRequestModel.cs" />
     <Compile Include="Api_BHutech\Models\Response\IResponse.cs" />
