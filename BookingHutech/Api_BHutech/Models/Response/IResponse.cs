@@ -43,13 +43,13 @@ namespace BookingHutech.Api_BHutech.Models.Response
                 ReturnCode = ReturnCode
             };
         }
-        public static ApiResponse ApiNotPermissionCall()
+        public static ApiResponse ApiNotPermissionCall(int ReturnCode = (int)BHutechExceptionType.APINOTPERMISSIONCALL)
         {
             return new ApiResponse()
             {
                 Message = "Sai header. Bạn không có quyền gọi api này.",
                 Data = null,
-                ReturnCode = (int)BHutechExceptionType.APINOTPERMISSIONCALL
+                ReturnCode = ReturnCode,
             };
         }
 
